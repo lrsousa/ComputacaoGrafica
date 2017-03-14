@@ -3,6 +3,14 @@
 
 void cena() {
 	glClear(GL_COLOR_BUFFER_BIT);
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+
+	glRotatef(30, 0, 0, 1);
+	//glTranslatef(-0.5, -0.5, 0.0);
+	//glScalef(2, 2, 1);
+	//glTranslatef(-0.5, -0.5, 0.0);
+	glRotatef(30, 0, 0, 1);
 
 	glBegin(GL_TRIANGLE_FAN);
 	glColor3f(1.0, 0, 0);
@@ -37,7 +45,7 @@ void cena() {
 	glBegin(GL_TRIANGLE_FAN);
 	glColor3f(1.0, 0, 0);
 	glVertex2d(-0.09, 0.14); //O
-	glVertex2d(-0.09,-0.02); //P
+	glVertex2d(-0.09, -0.02); //P
 	glVertex2d(-0.38, 0.14); //Q
 	glEnd();
 
@@ -50,6 +58,7 @@ void cena() {
 	glVertex2d(-0.56, 0.14); //V
 	glVertex2d(-0.52, 0.17); //X
 	glEnd();
+
 	glutSwapBuffers();
 
 }
@@ -59,7 +68,7 @@ void inicio() {
 }
 
 int main(int argc, char **argv) {
-	
+
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
 
