@@ -1,18 +1,18 @@
 #pragma once
 #include "Object.h"
 #include <stdio.h>
-#include "GL\glew.h"
-#include "GL\freeglut.h"
+#include <cmath>
 
 
 class Circle : public Object
 {
-	void bresenhamCircle(int raio, int center_c, int center_y);
-	float raio, xc, yc;
+	void desenhaCircle(int raio, int lados);
+	int raio, lados;
 public:
-	Circle(int raio, int center_x, int center_y);
+	Circle(int raio, int lados, int r, int g, int b);
+	Circle(int raio, int lados);
 	~Circle();
+
 	void draw();
 };
-
 

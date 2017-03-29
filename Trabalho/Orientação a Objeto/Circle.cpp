@@ -1,67 +1,52 @@
 #include "Circle.h"
+#include "Line.h"
 
 
-Circle::Circle(int raio, int center_x, int center_y)
+Circle::Circle(int raio, int lados, int r, int g, int b)
 {
 	this->raio = raio;
-	this->xc = center_x;
-	this->yc = center_y;
+	this->lados = lados;
+	this->r = r;
+	this->g = g;
+	this->b = b;
+}
+
+Circle::Circle(int raio, int lados)
+{
+	this->raio = raio;
+	this->lados = lados;
 }
 
 Circle::~Circle()
 {
 }
 
-
-void Circle::bresenhamCircle(int raio, int xc, int yc)
+void Circle::desenhaCircle(int raio, int lados)
 {
-	int x = 0, y = raio;
-	float pk = (5.0 / 4.0) - raio;
+	float x1 = (raio * cos(0 * (3.14 / 180)));
+	float y1 = (raio * sin(0 * (3.14 / 180)));
 
-	glVertex2d((xc + x) / 300.0, (yc + y) / 300.0);
-	glVertex2d((xc + x) / 300.0, (yc - y) / 300.0);
-	glVertex2d((xc + y) / 300.0, (yc + x) / 300.0);
-	glVertex2d((xc + y) / 300.0, (yc - x) / 300.0);
-	glVertex2d((xc - x) / 300.0, (yc - y) / 300.0);
-	glVertex2d((xc - y) / 300.0, (yc - x) / 300.0);
-	glVertex2d((xc - x) / 300.0, (yc + y) / 300.0);
-	glVertex2d((xc - y) / 300.0, (yc + x) / 300.0);
-
-
-	int k;
-
-	while (x < y)
+	for (int i = 0; i < 360; i += (360 / lados))
 	{
-		x = x + 1;
-		if (pk < 0)
-			pk = pk + 2 * x + 1;
-		else
-		{
-			y = y - 1;
-			pk = pk + 2 * (x - y) + 1;
-		}
-
-		glVertex2d((xc + x) / 300.0, (yc + y) / 300.0);
-		glVertex2d((xc + x) / 300.0, (yc - y) / 300.0);
-		glVertex2d((xc + y) / 300.0, (yc + x) / 300.0);
-		glVertex2d((xc + y) / 300.0, (yc - x) / 300.0);
-		glVertex2d((xc - x) / 300.0, (yc - y) / 300.0);
-		glVertex2d((xc - y) / 300.0, (yc - x) / 300.0);
-		glVertex2d((xc - x) / 300.0, (yc + y) / 300.0);
-		glVertex2d((xc - y) / 300.0, (yc + x) / 300.0);
+		float x2 = (raio * cos(i * (3.14 / 180)));
+		float y2 = (raio * sin(i * (3.14 / 180)));
+		Line *line = new Line(x1, y1, x2, y2, r, g, b);
+		x1 = x2;
+		y1 = y2;
 
 	}
-
 }
 
 
 void Circle::draw()
 {
 	glScalef(Sx, Sy, Sz);
+	glPointSize(5);
 	glRotatef(angulo, Rx, Ry, Rz);
 	glTranslatef(Tx, Ty, Tz);
 	glColor3f(r, g, b);
-	glBegin(GL_POINTS);
-	bresenhamCircle(raio, xc, yc);
+	glBegin(GL_LINE);
+	desenhaCircle(raio, lados);
 	glEnd();
+
 }

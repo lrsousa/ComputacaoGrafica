@@ -147,16 +147,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Box.cpp" />
     <ClCompile Include="Circle.cpp" />
-    <ClCompile Include="Lados.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Line.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Box.h" />
     <ClInclude Include="Circle.h" />
-    <ClInclude Include="Lados.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Line.h" />
     <ClInclude Include="Scene.h" />
