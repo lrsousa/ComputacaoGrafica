@@ -85,6 +85,7 @@ void Line::draw()
 {
 	glScalef(Sx, Sy, Sz);
 	glRotatef(angulo, Rx, Ry, Rz);
+	glPointSize(5);
 	glTranslatef(Tx, Ty, Tz);
 	glColor3f(r, g, b);
 	glBegin(GL_POINTS);

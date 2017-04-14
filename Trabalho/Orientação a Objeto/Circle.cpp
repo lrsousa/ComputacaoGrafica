@@ -41,7 +41,7 @@ void Circle::desenhaCircle(int raio, int lados)
 void Circle::draw()
 {
 	glScalef(Sx, Sy, Sz);
-	glPointSize(5);
+	glPointSize(2);
 	glRotatef(angulo, Rx, Ry, Rz);
 	glTranslatef(Tx, Ty, Tz);
 	glColor3f(r, g, b);
