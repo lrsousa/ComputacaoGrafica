@@ -1,0 +1,10 @@
+﻿  Source.cpp
+c:\temp\cone\cone\source.cpp(31): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\temp\cone\cone\source.cpp(42): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\temp\cone\cone\source.cpp(47): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\temp\cone\cone\source.cpp(52): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\temp\cone\cone\source.cpp(142): warning C4305: '=': truncation from 'double' to 'GLfloat'
+c:\temp\cone\cone\source.cpp(148): warning C4305: '=': truncation from 'double' to 'GLfloat'
+c:\temp\cone\cone\source.cpp(154): warning C4305: '=': truncation from 'double' to 'GLfloat'
+  Cone.vcxproj -> C:\Temp\Cone\Debug\Cone.exe
+  Cone.vcxproj -> C:\Temp\Cone\Debug\Cone.pdb (Full PDB)
